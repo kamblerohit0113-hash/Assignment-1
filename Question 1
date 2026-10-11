@@ -1,0 +1,22 @@
+# Q1: Employee Attendance Analyzer
+# Bonus eligibility rule: attendance must be at least 90%.
+
+total_days = int(input("Enter total working days: "))
+present_days = int(input("Enter present days: "))
+
+if total_days <= 0:
+    print("Total working days must be greater than zero.")
+elif present_days < 0 or present_days > total_days:
+    print("Invalid number of present days.")
+else:
+    absent_days = total_days - present_days
+    attendance_percentage = (present_days / total_days) * 100
+
+    print("Present days:", present_days)
+    print("Absent days:", absent_days)
+    print("Attendance percentage:", round(attendance_percentage, 2), "%")
+
+    if attendance_percentage >= 90:
+        print("Bonus Eligible")
+    else:
+        print("Not Eligible for Bonus")
